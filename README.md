@@ -1,18 +1,39 @@
-## 🛒 E-Commerce Data Analysis with MySQL
+# 🛒 Olist E-Commerce Business Intelligence & SQL Analysis
 
-### 📌 Project Overview
-This repository features a comprehensive data analysis project using **MySQL Server** to evaluate over **100,000 anonymized e-commerce orders** from the Brazilian Olist marketplace. 
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Domain](https://img.shields.io/badge/Domain-E--Commerce%20%26%20Logistics-orange?style=for-the-badge)
+![Dataset](https://img.shields.io/badge/Dataset-Olist%20Kaggle%20(100k%2B)-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
-The primary objective is to clean, relationalize, and query raw data to generate actionable business intelligence regarding financial performance, buyer geography, product category metrics, and delivery logistics.
+---
 
-### 🔑 Key Business Questions Answered
-* **Executive KPIs:** What is the total revenue, order count, unique customer count, and Average Order Value (AOV)?
-* **Geographic Performance:** Which Brazilian states produce the highest sales volume and revenue?
-* **Inventory Demand:** What are the top 10 best-selling product categories?
-* **Sales Growth:** How does revenue trend month-over-month across historical order data?
-* **Logistics & Delivery:** What are the average delivery times and freight expenses per state?
+## 📌 Executive Summary
 
-### 🛠️ Tech Stack & Skills Highlighted
-* **Database Engine:** MySQL Server 8.0 & MySQL Workbench
-* **SQL Capabilities:** `JOIN` operations, aggregate functions (`SUM`, `COUNT`, `AVG`), date transformations (`DATE_FORMAT`, `DATEDIFF`), grouping, sorting, and conditional null handling.
-* **Dataset:** Kaggle (Olist Brazilian E-Commerce Dataset)
+This repository contains an end-to-end relational database implementation and business performance analysis on **100,000+ anonymized e-commerce orders** from the Brazilian marketplace **Olist**. 
+
+Using **MySQL Server 8.0**, raw commercial data was engineered into a relational schema to extract actionable insights surrounding **financial growth, customer geography, product portfolio demand, and logistics efficiency**.
+
+---
+
+## 📐 Data Architecture & Schema
+
+The relational database (`ECOMMERCE_DB`) standardizes four core operational tables linked through primary and foreign key constraints:
+
+
+🛠️ Data Engineering & ETL Highlights
+Cross-Platform Compatibility: Replaced default Windows line endings (\r\n) with Unix standards (\n) to prevent dataset truncation errors during high-volume ingestion.
+
+Null Handling Pipeline: Constructed explicit @variable loading conditions via NULLIF(@var, '') to map missing dataset values directly to SQL NULL types without violating strict mode constraints.
+
+Transactional Integrity: Engineered execution blocks with temporary foreign key bypass rules (SET FOREIGN_KEY_CHECKS = 0) to allow high-speed bulk ingestion without constraint lockouts.
+
+📂 Repository Structure
+├── data/                      # Raw CSV datasets (Kaggle Olist)
+├── scripts/
+│   ├── data_import.sql        # Automated table schema creation & ETL load script
+│   └── business_analysis.sql  # 5 analytical business queries
+├── README.md                  # Project documentation & technical walkthrough
+
+
+👨‍💻 Author
+Syed Ramiq Ali
